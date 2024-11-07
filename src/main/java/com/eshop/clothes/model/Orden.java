@@ -1,0 +1,37 @@
+package com.eshop.clothes.model;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+@Entity
+@Table(name="Orden")
+@Data
+public class Orden {
+@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private double total;
+
+    @ManyToOne
+    private Cliente cliente;
+
+    @OneToMany
+    private List<Productos> productos;
+
+    // Constructores, getters y setters
+    public Orden() {}
+
+    public Orden(double total, Cliente cliente, List<Productos> productos) {
+        this.total = total;
+        this.cliente = cliente;
+        this.productos = productos;
+    }
+    
+}
