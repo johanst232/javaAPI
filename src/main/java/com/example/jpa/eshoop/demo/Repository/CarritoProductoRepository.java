@@ -9,5 +9,5 @@ import com.example.jpa.eshoop.demo.model.CarritoProducto;
 import com.example.jpa.eshoop.demo.model.Producto;
 
 public interface CarritoProductoRepository extends JpaRepository <CarritoProducto,Long>{
- Optional<CarritoProducto> findByCarritoAndProducto(Carrito carrito, Producto producto);
+Optional<CarritoProducto> findByCarritoAndProducto(Carrito carrito, Producto producto);
 }

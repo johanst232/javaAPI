@@ -15,7 +15,8 @@ CREATE TABLE cliente (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    direccion VARCHAR(255)
+    direccion VARCHAR(255),
+    telefono VARCHAR(255)
 );
 
 CREATE TABLE orden (
@@ -35,9 +36,9 @@ CREATE TABLE orden_producto (
 );
 
 CREATE TABLE carrito (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id BIGINT UNIQUE,
-    FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  cliente_id BIGINT UNIQUE,
+  FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
 );
 
 CREATE TABLE carrito_producto (

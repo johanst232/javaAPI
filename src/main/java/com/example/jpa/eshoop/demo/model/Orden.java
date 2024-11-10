@@ -26,18 +26,10 @@ public class Orden {
     private Long id;
     private double total;
 
-    @ManyToOne
+@ManyToOne
     private Cliente cliente;
 
-    @OneToMany
+@OneToMany 
     private List<Producto> producto;
 
-    // Constructores, getters y setters
-
-    public Orden(double total, Cliente cliente, List<Producto> producto) {
-        this.total = total;
-        this.cliente = cliente;
-        this.producto = producto;
-    }
-    
 }
