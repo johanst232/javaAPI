@@ -30,7 +30,7 @@ public class OrdenController {
         return ResponseEntity.ok(orden);
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Orden crearOrden(@RequestBody Orden orden) {
         return ordenService.crearOrden(orden);
     }

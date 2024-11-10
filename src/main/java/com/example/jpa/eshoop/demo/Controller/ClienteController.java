@@ -29,7 +29,7 @@ public class ClienteController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Cliente agregarCliente(@RequestBody Cliente cliente) {
         return clienteService.agregarCliente(cliente);
     }
